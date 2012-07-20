@@ -183,6 +183,8 @@ class modServers extends modCore {
 				'active' => $_POST['active'],
 				'email' => $_POST['email'],
 				'sms' => $_POST['sms'],
+				'last_online' => "NOW()",
+				'last_check' => "NOW()"
 			);
 
 			// check for edit or add

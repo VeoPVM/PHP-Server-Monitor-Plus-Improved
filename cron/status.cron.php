@@ -23,7 +23,8 @@
  */
 
 // include main configuration and functionality
-require_once dirname(__FILE__) . '/../config.inc.php';
+require_once(dirname(__FILE__) . '/../config.inc.php');
+set_time_limit(320);
 
 // get the active servers from database
 $servers = $db->select(
@@ -56,7 +57,7 @@ foreach ($servers as $server) {
 	);
 
 	// if the server is on, add the last_online value
-	if($save['status'] == 'on') {
+	if ($save['status'] == 'on') {
 		$save['last_online'] = date('Y-m-d H:i:s');
 	}
 

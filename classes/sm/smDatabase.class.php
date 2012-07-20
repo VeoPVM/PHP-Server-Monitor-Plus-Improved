@@ -214,7 +214,11 @@ class smDatabase {
 
 		foreach($data as $field => $value) {
 			$value = $this->escapeValue($value);
-			$query .= "`{$table}`.`{$field}`='{$value}', ";
+			if ($value == "NOW()") {
+				$query .= "`{$table}`.`{$field}`={$value}, ";
+			} else {
+				$query .= "`{$table}`.`{$field}`='{$value}', ";
+			}
 		}
 
 		$query = substr($query, 0, -2) . ' ' . $this->buildWhereClause($table, $where);
