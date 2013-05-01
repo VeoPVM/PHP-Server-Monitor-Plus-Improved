@@ -150,8 +150,12 @@ function sm_load_conf() {
  * @param string $server_id
  * @param string $message
  */
-function sm_add_log($server_id, $type, $message, $user_id = null) {
+function sm_add_log($server_id, $type, $message, $user_id = NULL, $rtime = NULL) {
 	global $db;
+	
+	$rtime = round($rtime, 7);
+	
+	$message .= " RTIME: ".$rtime;
 
 	$db->save(
 		SM_DB_PREFIX.'log',
@@ -159,7 +163,8 @@ function sm_add_log($server_id, $type, $message, $user_id = null) {
 			'server_id' => $server_id,
 			'type' => $type,
 			'message' => $message,
-			'user_id' => ($user_id === null) ? '' : $user_id,
+			'user_id' => ($user_id === NULL) ? '' : $user_id,
+			'rtime' => $rtime
 		)
 	);
 }

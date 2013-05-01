@@ -126,10 +126,13 @@ class smUpdaterStatus extends smCore {
 			"http://mail.whsc.vic.edu.au",
 			"http://www.michaelgreenhill.net",
 			"http://www.railpage.com.au",
-			"http://www.theregister.co.uk"
+			"http://www.theregister.co.uk",
+			"http://telstra.com.au", 
+			"http://www.iinet.net.au"
 		);
 		
 		if (in_array($this->server['ip'], $external) && PROXY_ENABLE == true) {
+			//echo "<pre>"; echo PROXY_TYPE."://".PROXY_USERPWD."@".PROXY_HOSTNAME.":".PROXY_PORT; die;
 			curl_setopt($ch, CURLOPT_PROXYPORT, PROXY_PORT);
 			curl_setopt($ch, CURLOPT_PROXYTYPE, PROXY_TYPE);
 			curl_setopt($ch, CURLOPT_PROXY, PROXY_HOSTNAME);
@@ -208,8 +211,8 @@ class smUpdaterStatus extends smCore {
 				break;
 		}
 
-		if(!$notify) {
-			return false;
+		if (!$notify) {
+			//return false;
 		}
 
 		// first add to log (we use the same text as the SMS message because its short..)
@@ -217,7 +220,9 @@ class smUpdaterStatus extends smCore {
 			sm_add_log(
 				$this->server['server_id'],
 				'status',
-				sm_parse_msg($this->status_new, 'sms', $this->server)
+				sm_parse_msg($this->status_new, 'sms', $this->server),
+				NULL,
+				$this->rtime
 			);
 		}
 
