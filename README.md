@@ -1,6 +1,6 @@
 # PHP Server Monitor Plus Improved
 
-This project is a upgrade interface for [PHP Server Monitor](http://phpservermon.sourceforge.net), using [Twitter Bootstrap](http://twitter.github.com/bootstrap/).  I intend to add some improvements to this such as more methods of notification (including Chrome/Notification Centre alerts), more types of monitoring (not just Service/Website), and improve some visual aspects of the design (such as making it easier to see offline servers).  I forked this from doctorjbeam on GitHub, who forked it from madeinnordeste on GitHub.  If you wish to see what modifications I have made, you can do so on the commits page, and the others docs are within the docs folder.
+This project is a upgrade interface for [PHP Server Monitor](http://phpservermon.sourceforge.net), using [Twitter Bootstrap](http://twitter.github.com/bootstrap/).  I intend to add some improvements to this such as more methods of notification (including Chrome/Notification Centre alerts), more types of monitoring (not just Service/Website), and improve some visual aspects of the design (such as making it easier to see offline servers).  I forked this from doctorjbeam on GitHub, who forked it from madeinnordeste on GitHub.  If you wish to see what modifications I have made, you can do so on the commits page, and the other docs are within the docs folder.
 
 ## Screenshots
 
