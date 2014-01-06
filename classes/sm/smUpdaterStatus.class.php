@@ -227,12 +227,12 @@ class smUpdaterStatus extends smCore {
 		}
 
 		// check if email is enabled for this server
-		if(sm_get_conf('email_status') && $this->server['email'] == 'yes') {
+		if(sm_get_conf('email_status') && $this->server['email'] == 'yes' && $notify == true) {
 			// send email
 			$this->notifyByEmail();
 		}
 		// check if sms is enabled for this server
-		if(sm_get_conf('sms_status') && $this->server['sms'] == 'yes') {
+		if(sm_get_conf('sms_status') && $this->server['sms'] == 'yes' && $notify == true) {
 			// yay lets wake those nerds up!
 			$this->notifyByTxtMsg();
 		}
