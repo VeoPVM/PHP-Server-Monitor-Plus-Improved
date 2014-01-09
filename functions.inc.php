@@ -164,7 +164,6 @@ function sm_add_log($server_id, $type, $message, $user_id = NULL, $rtime = NULL)
 			'type' => $type,
 			'message' => $message,
 			'user_id' => ($user_id === NULL) ? '' : $user_id,
-			'rtime' => $rtime
 		)
 	);
 }
