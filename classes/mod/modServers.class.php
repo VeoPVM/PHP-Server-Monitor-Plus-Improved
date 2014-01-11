@@ -176,9 +176,9 @@ class modServers extends modCore {
 		// check for add/edit mode
 		if (isset($_POST['label']) && isset($_POST['ip']) && isset($_POST['port'])) {
 			$clean = array(
-				'label' => htmlentities($_POST['label']),
-				'ip' => htmlentities($_POST['ip']),
-				'port' => htmlentities($_POST['port']),
+				'label' => strip_tags($_POST['label']),
+				'ip' => strip_tags($_POST['ip']),
+				'port' => strip_tags($_POST['port']),
 				'type' => $_POST['type'],
 				'active' => $_POST['active'],
 				'email' => $_POST['email'],
