@@ -38,12 +38,16 @@ class txtmsgTextmarketer extends txtmsgCore {
 
     public function sendSMS($message) {
 
+        $textmarketer_url = "https://api.textmarketer.co.uk/gateway/";
+        $textmarketer_data = urlencode($message);
+        $textmarketer_origin = urlencode('SERVERALERT');
+
+
         foreach( $this->recipients as $phone ){
 
-        $URL = "https://api.textmarketer.co.uk/gateway/?username=" . $this->username . "&password=" . $this->password . "&to=" . $phone . "&message=" . urlencode($message) . "&orig=" . urlencode('SERVERALERT');
-        $fp = fopen($URL, 'r');
-        $result = fread($fp, 1024);
-        fclose($fp);
+        $URL = $textmarketer_url."?username=" . $this->username . "&password=" . $this->password . "&to=" . $phone . "&message=" . $textmarketer_data . "&orig=" . $textmarketer_origin;
+
+        $result = file_get_contents($URL);
 
         }
 
