@@ -152,6 +152,7 @@ class modConfig extends modCore {
 				'label_sms_gateway_spryng' => sm_get_lang('config', 'sms_gateway_spryng'),
 				'label_sms_gateway_inetworx' => sm_get_lang('config', 'sms_gateway_inetworx'),
 				'label_sms_gateway_clickatell' => sm_get_lang('config', 'sms_gateway_clickatell'),
+                'label_sms_gateway_textmarketer' => sm_get_lang('config', 'sms_gateway_textmarketer'),
 				'label_sms_gateway_username' => sm_get_lang('config', 'sms_gateway_username'),
 				'label_sms_gateway_password' => sm_get_lang('config', 'sms_gateway_password'),
 				'label_sms_from' => sm_get_lang('config', 'sms_from'),

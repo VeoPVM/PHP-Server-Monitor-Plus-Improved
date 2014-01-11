@@ -321,6 +321,9 @@ class smUpdaterStatus extends smCore {
 			case 'clickatell':
 				$sms = new txtmsgClickatell();
 				break;
+            case 'textmarketer':
+                $sms = new txtmsgTextmarketer();
+                break;
 		}
 
 		// copy login information from the config file
